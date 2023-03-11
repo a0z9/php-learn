@@ -7,6 +7,7 @@ class A {
   //public $data;
   const VERSION=1.01;
   private $data;
+  private $id = 1238917239;
   // public static $counter = 0;
   private static $counter = 0;
 
@@ -47,6 +48,30 @@ class A {
           ", data=" . $this->data . 
           ", Version: " . self::VERSION; 
  }
+ 
+ //serialize
+
+ public function __sleep()
+ {
+    echo "__sleep called!\n";
+    return ["data"];
+ }
+
+ public function __wakeup()
+ {
+    echo "__wakeup called!\n";
+    $this->id = 0;
+ }
+
+
+ //clone
+
+ public function __clone()
+ {
+    echo "\nclone called..\n";
+    $this->data = $this->data*1.01;
+ }
+
 
  // hooks
 
