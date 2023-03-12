@@ -1,20 +1,29 @@
 <?php
-
 namespace istu\rockets;
 
-class BaseRocket
+
+require_once "abstractrocket.php";
+
+class BaseRocket extends AbstractRocket
 {
-  public float $m; //mass
-  public float $p;
+//   protected float $m; //mass
+//   protected float $p;
+//   protected string $rocketType;
 
   public function ignit(){
-   echo "Engine ignited!!";
+   echo "Engine ignited!! On rocket " .  spl_object_id($this) . "\n";
   }
 
   public function __construct(float $m=10033.6, float $p=20000.2)
   {
    $this->m = $m;
-   $this->p = $p;  
+   $this->p = $p;
+   echo "+++ ctor " . __CLASS__ . ", obj->" . spl_object_id($this) . "\n";  
+  }
+
+  public function __destruct()
+  {
+    echo "--- dtor " . __CLASS__ . ", obj->" . spl_object_id($this) . "\n"; 
   }
 
   public function __toString() : string
