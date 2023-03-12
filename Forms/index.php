@@ -18,8 +18,8 @@
           <td><input type="text" name="sname"></td>
           </tr>
           <tr>
-          <td>Дата рождения</td>
-          <td><input type="date" name="bdate"></td>
+          <td>Expired</td>
+          <td><input type="date" name="exdate"></td>
       </tr>
    </table>
    <input type="submit">

@@ -7,6 +7,18 @@
     <title>User Process Page</title>
 </head>
 <body>
+    <?php
+    $name=null;
+    extract($_POST);
+    ?>
+
+    <h2>
+     <pre>
+     Имя:&nbsp<?=$name?> <br/>
+     Фамилия:&nbsp<?=$sname?> <br/>
+     Expired:&nbsp<?=$exdate?> <br/>
+     </pre>   
+    </h2>   
     
 
 </body>
