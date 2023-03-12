@@ -1,4 +1,10 @@
-<?php session_start();?> 
+<?php 
+session_start();
+header("Cache-Control: no-cache");
+header("Bla-Bla-Header: User bla page");
+
+?>
+ 
 <!DOCTYPE html>
 <html lang="en">
 <head>

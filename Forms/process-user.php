@@ -30,6 +30,12 @@
 
     //filter_var($name,....)
     //filter_input()
+    $reg = '/^[a-z ]{2,}$/i';
+    if( !preg_match($reg,$name) ) 
+    {
+        header("Location: redir.php");
+        exit();
+    }
     ?>
 
     <h2>
