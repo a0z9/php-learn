@@ -9,7 +9,7 @@ abstract class AbstractRocket implements Ignitable
   protected float $p;
   protected string $rocketType;
 
-  public function pre_ignit(){
+  protected function pre_ignit(){
   echo "Pre ignit procedures ok!! Ready to ignit!\n";
   }
   //public  abstract function ignit();

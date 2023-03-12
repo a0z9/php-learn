@@ -14,6 +14,8 @@ use istu\rockets\Ignitable;
 function testIgnit(Ignitable $i)
 {
   $i->ignit();
+  // up()->up()->up()
+  // 
 }
 
 function testStrict(int $a)

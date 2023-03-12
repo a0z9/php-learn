@@ -43,6 +43,28 @@
                 "uriFormat": "http://localhost:%s",
                 "action": "openExternally"
             }
+        },
+        {
+            "name": "Launch2 Built-in web server",
+            "type": "php",
+            "request": "launch",
+            "runtimeArgs": [
+                "-dxdebug.mode=debug",
+                "-dxdebug.start_with_request=yes",
+                "-S",
+                "localhost:8080",
+                "-t",
+                "${fileDirname}"
+            ],
+            //"program": "${file}",
+            //"cwd": "${workspaceRoot}",
+            "cwd": "${fileDirname}",
+            "port": 9003,
+            "serverReadyAction": {
+                "pattern": "Development Server \\(http://localhost:([0-9]+)\\) started",
+                "uriFormat": "http://localhost:%s",
+                "action": "openExternally"
+            }
         }
     ]
 }

@@ -4,13 +4,23 @@ namespace istu\rockets;
 
 require_once "abstractrocket.php";
 
+class Engine {}
+
+class EMS {}
+
+
 class BaseRocket extends AbstractRocket
 {
+
 //   protected float $m; //mass
 //   protected float $p;
 //   protected string $rocketType;
 
+  private Engine $engine; // composition 
+  private EMS $ems;
+
   public function ignit(){
+   $this->pre_ignit();
    echo "Engine ignited!! On rocket " .  spl_object_id($this) . "\n";
   }
 

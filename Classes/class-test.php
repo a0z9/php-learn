@@ -3,8 +3,8 @@
 namespace test;
 //class A {}
 
-require "core/a2.class.php";
-require "core/a.class.php";
+require_once "core/a2.class.php";
+require_once "core/a.class.php";
 
 use \core\data\A;
 use \core\data as cd;
