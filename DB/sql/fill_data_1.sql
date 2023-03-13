@@ -44,3 +44,5 @@ on l.user_id = u.id;
 
 insert into logins(user_id,login,password,expires)
 values (7,"peter",sha2("pass",256), date_add(now(),interval 15 day)); 
+
+delete from users where id=8;

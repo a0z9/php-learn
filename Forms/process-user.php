@@ -43,23 +43,51 @@ require_once "db/dbo.php";
     ?>
 
     <h2>
-     <pre>
-     Имя:&nbsp<?=$name?> <br/>
-     Фамилия:&nbsp<?=$sname?> <br/>
-     Login:&nbsp<?=$login?> <br/>
-     Expired:&nbsp<?=$exdate?> <br/>
-     </pre>   
+        <pre>
+        Имя:&nbsp<?=$name?> <br/>
+        Фамилия:&nbsp<?=$sname?> <br/>
+        Login:&nbsp<?=$login?> <br/>
+        Expired:&nbsp<?=$exdate?> <br/>
+        </pre>   
     </h2>   
 
     <h3>
-    <?php
-    echo $con->getAttribute(PDO::ATTR_SERVER_INFO) . '<br/>';
-    ?>
+        <?php
+        echo "Server stats:&nbsp;" . $con->getAttribute(PDO::ATTR_SERVER_INFO) . '<br/>';
+        ?>
     </h3>
 
     <?php
-    ?>
+    $con->beginTransaction();
 
+    // --- add user to users table
+    $stmt = $con->prepare(
+        "insert into users(name,sname,expired) values (:name, :sname, :expired)");
+    
+    $stmt->bindParam(':name',$name);
+    $stmt->bindParam(':sname',$sname);
+    $stmt->bindParam(':expired',$exdate);
+        
+    $stmt->execute();   
+    $id = $con->lastInsertId(); 
+
+    //---- add login
+    $stmt = $con->prepare(
+        "insert into logins(user_id,login,password,expires) values (:userid, :login, :password, :expired)");
+    
+    $password = hash('sha256',$password . $login);
+
+    $stmt->bindParam(':userid',$id);
+    $stmt->bindParam(':login',$login);
+    $stmt->bindParam(':password',$password);
+    $stmt->bindParam(':expired',$exdate);
+    
+    //if(...) $con->rollBack();
+    $stmt->execute();
+
+    $con->commit();
+    ?>
+ <h2> Inserted id: <?=$id?> </h2>
 
 </body>
 </html>

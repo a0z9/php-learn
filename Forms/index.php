@@ -2,7 +2,7 @@
 session_start();
 header("Cache-Control: no-cache");
 header("Bla-Bla-Header: User bla page");
-require_once "db/dbo.php";
+
 ?>
  
 <!DOCTYPE html>
