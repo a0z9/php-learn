@@ -18,14 +18,8 @@ require_once "../utils/functions.php";
     if(!isset($_COOKIE['message']))
     setcookie("message","718687126 page",time() + 60*60, '/');
 
-
-    //....
-
-    //$name='';
     extract($_POST);
-    //extract($_GET);
-    //$name = trim($name);
-    //$name = strip_tags($name);
+   
     $name = sanitize0($name);
     $sname = sanitize0($sname);
 
