@@ -75,9 +75,9 @@ require_once "db/dbo.php";
     $stmt = $con->prepare(
         "insert into logins(user_id,login,password,expires) values (:userid, :login, :password, :expired)");
     
-    $password = hash('sha256',$password . $login);
+    $password = hash('sha256',$password . strtolower($login));
 
-    $stmt->bindParam(':userid',$id);
+    $stmt->bindParam(':userid',$id,PDO::PARAM_INT);
     $stmt->bindParam(':login',$login);
     $stmt->bindParam(':password',$password);
     $stmt->bindParam(':expired',$exdate);
