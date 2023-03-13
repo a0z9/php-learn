@@ -12,12 +12,14 @@ values (3,"kate",sha2("pass",256), date_add(now(),interval 15 day));
 start transaction;
 
 insert into users(name,sname,expired)
-values("Jane","The Student", date_add(now(),interval 7 day));
+values("Lucy","The Student", date_add(now(),interval 7 day));
 
 set @id = last_insert_id();
-select @id as 'imserted id';
+select @id as 'inserted id';
 insert into logins(user_id,login,password,expires)
-values (@id,"jane",sha2("pass",256), date_add(now(),interval 15 day)); 
+values (@id,"jucy",sha2("pass",256), date_add(now(),interval 15 day)); 
+-- test transaction rollback
+-- values (25,"jucy",sha2("pass",256), date_add(now(),interval 15 day)); 
 
 commit;
 
@@ -34,3 +36,11 @@ select u.name, u.sname, l.login
 from logins l
 join users u
 on l.user_id = u.id;
+
+select u.name, u.sname, l.login
+from logins l
+right join users u
+on l.user_id = u.id;
+
+insert into logins(user_id,login,password,expires)
+values (7,"peter",sha2("pass",256), date_add(now(),interval 15 day)); 
