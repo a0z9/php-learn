@@ -33,9 +33,12 @@ header("Bla-Bla-Header: User bla page");
           <td><input type="date" name="exdate"></td>
       </tr>
    </table>
-   <input type="submit">
+   <input type="submit" value="Сохранить пользователя">
+   <br/>
+   <button type="submit" id="sbt"> DATA </button>
+
   </form>    
-  <h3><?=$_SESSION['User Name']?></h3>
+  <h3><?=$_SESSION['User Name']??""?></h3>
 
 </body>
 </html>
