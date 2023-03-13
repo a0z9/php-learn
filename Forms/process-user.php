@@ -1,4 +1,8 @@
-<?php session_start();?> 
+<?php 
+session_start();
+require_once "db/dbo.php";
+?> 
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -42,10 +46,20 @@
      <pre>
      Имя:&nbsp<?=$name?> <br/>
      Фамилия:&nbsp<?=$sname?> <br/>
+     Login:&nbsp<?=$login?> <br/>
      Expired:&nbsp<?=$exdate?> <br/>
      </pre>   
     </h2>   
-    
+
+    <h3>
+    <?php
+    echo $con->getAttribute(PDO::ATTR_SERVER_INFO) . '<br/>';
+    ?>
+    </h3>
+
+    <?php
+    ?>
+
 
 </body>
 </html>

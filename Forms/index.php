@@ -2,7 +2,7 @@
 session_start();
 header("Cache-Control: no-cache");
 header("Bla-Bla-Header: User bla page");
-
+require_once "db/dbo.php";
 ?>
  
 <!DOCTYPE html>
@@ -28,6 +28,17 @@ header("Bla-Bla-Header: User bla page");
           <td>Фамилия:</td>
           <td><input type="text" name="sname"></td>
           </tr>
+
+          <tr>
+          <td>Login:</td>
+          <td><input type="text" name="login"></td>
+          </tr>
+
+          <tr>
+          <td>Пароль:</td>
+          <td><input type="password" name="password"></td>
+          </tr>
+
           <tr>
           <td>Expired:</td>
           <td><input type="date" name="exdate"></td>
