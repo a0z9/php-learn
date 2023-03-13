@@ -1,10 +1,10 @@
 -- create db
-create database if not exists shop2;
+create database if not exists shop;
 
-grant all on shop2.* to shop_user;
+grant all on shop.* to shop_user;
 flush privileges; 
 
-use shop2;
+use shop;
 
 -- create tables
 create table if not exists users(
