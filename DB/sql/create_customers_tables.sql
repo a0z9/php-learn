@@ -19,3 +19,8 @@ create table if not exists logins
 
 );
 
+alter table logins
+modify column login varchar(64) not null unique;
+
+alter table logins
+modify column user_id int not null unique;
