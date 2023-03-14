@@ -17,23 +17,23 @@ header("Bla-Bla-Header: Login page");
 <?php 
   $a=1;
   ?>  
-  <!-- <form action="process-user.php" method="post"> -->
-  <form action="process-login.php" method="post">
+    <form action="process-login.php" method="post">
    <table>
-      <tr>
           <tr>
           <td>Login:</td>
-          <td><input type="text" name="login"></td>
+          <td><input type="text" name="login" required minlength="2"></td>
           </tr>
 
           <tr>
           <td>Пароль:</td>
-          <td><input type="password" name="password"></td>
+          <td><input type="password" name="password" required></td>
           </tr>
+          <tr>
+            <td></td><td><input type="submit" value="Войти"></td>
+          </tr>  
 
-      </tr>
    </table>
-   <input type="submit" value="Войти">
+   
    <br/>
 
   </form>    
