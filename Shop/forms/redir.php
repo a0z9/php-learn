@@ -10,10 +10,10 @@
 <body>
 <h2><?=$_SESSION["message"]?></h2>  
 <h2>Вы будете перенаправлены на главную страницу через
-<span id="seconds">5</span> cекунд...</h2>    
+<span id="seconds">2</span> cекунд...</h2>    
 
 <script>
-     const wt = 5000, ct = 1000;
+     const wt = 2000, ct = 1000;
      var count = wt/ct;
 
     const si = setInterval(()=>{
