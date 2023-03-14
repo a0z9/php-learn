@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,5 +9,14 @@
 </head>
 <body>
     <h2>Welcome to Shop!</h2>
+    <?php
+    if(isset($_SESSION['login']))
+    {
+    echo "<h2> Вы зашли как ". $_SESSION['login'] . "</h2>";
+    }
+    else{
+    echo "<h3> Вы зашли как анонимный пользователь. Ограниченный доступ. </h3>";
+    }
+    ?>
 </body>
 </html>
