@@ -13,3 +13,13 @@ select * from store;
 
 use shop;
 select * from logins;
+
+use shop;
+select * from orders;
+
+--- delete all !!!---
+-- use shop;
+-- delete from order_details;
+-- delete from orders;
+
+

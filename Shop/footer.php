@@ -2,7 +2,11 @@
 <hr/>
 <a href="<?=$baseURL?>index.php">Home</a><br/>
 <?php
-if($user_is_logged)  echo "<a href=\"" .$baseURL. "forms/logout.php\">Logout</a><br/>";   
+if($user_is_logged) 
+{
+echo "<a href=\"" .$baseURL. "forms/logout.php\">Logout</a><br/>";
+echo "<a href=\"" .$baseURL. "forms/basket.php\">Корзина</a><br/>";
+}   
 else echo "<a href=\"" .$baseURL . "forms/login.php\">Login</a><br/>";  
 
 if($user_is_admin)  
