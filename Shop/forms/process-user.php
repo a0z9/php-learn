@@ -1,6 +1,6 @@
 <?php
-   require_once "check-admin.php"; 
    require_once "../header.php"; 
+   require_once "check-admin.php";
    require_once "../db/dbo.php";
    require_once "../utils/functions.php"; 
 
