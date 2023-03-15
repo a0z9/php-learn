@@ -17,8 +17,7 @@ header("Bla-Bla-Header: Login page");
 <?php 
   $a=1;
   ?>  
-  <!-- <form action="process-user.php" method="post"> -->
-  <form action="process-login.php" method="post">
+    <form action="process-login.php" method="post">
    <table>
       <tr>
           <tr>

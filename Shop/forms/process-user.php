@@ -1,6 +1,9 @@
-<?php require "../header.php"; ?>
-    <?php
-    
+<?php
+   require_once "check-admin.php"; 
+   require_once "../header.php"; 
+   require_once "../db/dbo.php";
+   require_once "../utils/functions.php"; 
+
     extract($_POST);
    
     $name = sanitize0($name);
@@ -58,7 +61,11 @@
     
     //if(...) $con->rollBack();
     $stmt->execute();
-
     $con->commit();
-    ?>
+
+    $_SESSION['message'] = "Пользователь $name успешно добавлен";
+
+    header("Location: redir.php");
+    exit();
+?>
  <?php require "../footer.php"; ?>

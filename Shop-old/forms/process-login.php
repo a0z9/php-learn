@@ -18,8 +18,11 @@ use shop\models\Login;
         $_SESSION['message'] = "Success Auth as" . $login;
     }
     else{
-        session_destroy();
-        session_start();
+        // session_destroy();
+        // session_start();
+        $_SESSION = [];
+        session_regenerate_id();
+        
         $_SESSION['message'] = "Error Auth..";
     }
     header("Location: redir.php");

@@ -30,13 +30,14 @@ require_once "../utils/functions.php";
     if(password_verify($password . strtolower($login),$loginHash))
     {
         $_SESSION['login'] = $login;
+        $_SESSION['message'] = "Success Auth as" . $login;
     }
     else{
-        echo "<h2>Error Auth..</h2>";
-        //header("Location: login.php");
-        //exit();
+        $_SESSION['message'] = "Error Auth..";
     }
-   
+    header("Location: redir.php");
+        exit();
+
     ?>
     <h2>
         <pre>

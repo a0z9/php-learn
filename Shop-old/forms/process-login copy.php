@@ -9,6 +9,7 @@ require_once "../utils/functions.php";
     $login = sanitize0($login);
     //$login = strtolower($login);
     
+    
     $stmt = $con->prepare(
         "select pass from logins where login=:login");
     $stmt->bindParam(':login',$login);
